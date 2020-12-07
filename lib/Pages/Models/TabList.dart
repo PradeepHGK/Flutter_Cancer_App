@@ -18,10 +18,6 @@ List<Widget> listTabs = [
     text: "Hospitals",
   ),
   Tab(
-    icon: Icon(Icons.account_circle_rounded),
-    text: "Profile",
-  ),
-  Tab(
     icon: ImageIcon(AssetImage("images/icons/faq.png")),
     text: "FAQ",
   )

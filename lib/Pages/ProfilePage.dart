@@ -9,7 +9,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 1,
       child: Column(
         children: [
           Padding(
@@ -23,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       backgroundColor: Colors.blueGrey,
                       child: Center(
                           child: IconButton(
-                            color: Colors.blue,
+                        color: Colors.blue,
                         icon: Icon(Icons.edit),
                         onPressed: null,
                         alignment: Alignment.center,

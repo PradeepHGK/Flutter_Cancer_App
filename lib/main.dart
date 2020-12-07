@@ -1,3 +1,4 @@
+import 'package:demoapp/Pages/GetStartedPage.dart';
 import 'package:demoapp/Pages/Models/TabList.dart';
 import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DefaultTabController(
-        length: listTabs.length,
-        child: HomeScreen(),
-        initialIndex: 0,
-      ),
+      home: GetStartedScreen(),
       // MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
