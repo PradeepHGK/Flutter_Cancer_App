@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:demoapp/Pages/GetStartedPage.dart';
 import 'package:demoapp/Pages/Hospitals.dart';
 import 'package:demoapp/Pages/Models/TabList.dart';
+import 'package:demoapp/Pages/NaturalTreatment.dart';
 import 'package:demoapp/Pages/Patients.dart';
 import 'package:demoapp/Pages/Products.dart';
 import 'package:demoapp/Pages/ProfilePage.dart';
@@ -63,9 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
         body: TabBarView(
           children: [
             Patients(),
-            Products(),
+            NaturalTreatment(),
             Hospitals(),
-            ProfilePage(),
+            Products(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

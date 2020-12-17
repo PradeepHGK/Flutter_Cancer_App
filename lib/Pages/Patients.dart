@@ -18,7 +18,7 @@ class Patients extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        patientScrollList()
+        patientScrollList(),
       ],
     );
   }

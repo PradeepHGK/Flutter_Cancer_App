@@ -26,22 +26,30 @@ class Hospitals extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey,
+                            color: Colors.white,
                             offset: Offset(0.0, 1.0), //(x,y)
                             blurRadius: 6.0,
                           )
                         ]),
                     height: 290,
+                    width: MediaQuery.of(context).size.width,
                     child: Stack(
                       children: [
                         ClipRRect(
                             borderRadius: BorderRadius.circular(20),
                             child: Image(
-                                height: 290,
-                                fit: BoxFit.fill,
-                                alignment: Alignment.topCenter,
-                                image: NetworkImage(
-                                    hospitalList[index].hospitalImageURL))),
+                              height: 290,
+                              fit: BoxFit.fill,
+                              alignment: Alignment.topCenter,
+                              image: NetworkImage(
+                                  hospitalList[index].hospitalImageURL),
+                              loadingBuilder: (context, Widget child,
+                                  ImageChunkEvent loadingprogress) {
+                                if (loadingprogress == null) return child;
+                                return Center(
+                                    child: CircularProgressIndicator());
+                              },
+                            )),
                         Positioned(
                             left: 20,
                             bottom: 20,
