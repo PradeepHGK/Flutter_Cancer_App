@@ -45,6 +45,7 @@ class GetStartedScreen extends StatelessWidget {
             height: 90,
           ),
           FlatButton(
+            highlightColor: Colors.white,
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => HomeScreen()));
@@ -65,7 +66,7 @@ class GetStartedScreen extends StatelessWidget {
               height: 80,
               width: 280,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(30), bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
                   gradient: LinearGradient(
                     begin: Alignment.bottomLeft,
                     colors: [
