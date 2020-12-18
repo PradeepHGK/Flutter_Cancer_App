@@ -6,6 +6,8 @@ import 'homePage.dart';
 class PatientInfoPage extends StatelessWidget {
   int patientID;
 
+  var child;
+
   PatientInfoPage(this.patientID);
 
   @override
@@ -42,15 +44,91 @@ class PatientInfoPage extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HomeScreen()));
               })),
-      body: Container(
-        child: Center(
-            child: Text(
-          "Patient Info Page $patientID",
-          style: TextStyle(
-              color: Colors.deepOrangeAccent,
-              fontSize: 10,
-              fontWeight: FontWeight.bold),
-        )),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+            child: Container(
+              child: ClipRRect(
+                  child: Image(image: AssetImage("images/homepage.jpeg"))),
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+              width: MediaQuery.of(context).size.width,
+              height: 60,
+              child: LimitedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          print("InfoButton");
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)),
+                          width: MediaQuery.of(context).size.width / 3,
+                          height: MediaQuery.of(context).size.height / 2,
+                          child: Center(
+                            child: Text(
+                              "Information",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          print("Comments");
+                        },
+                        child: Container(
+                          color: Colors.transparent,
+                          width: MediaQuery.of(context).size.width / 3,
+                          height: MediaQuery.of(context).size.height / 2,
+                          child: Center(
+                            child: Text(
+                              "Live Comments",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              "Patient Info Page $patientID",
+              style: TextStyle(
+                  color: Colors.deepOrangeAccent,
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold),
+            )),
+          ),
+        ],
       ),
     );
   }
