@@ -1,6 +1,8 @@
 import 'package:demoapp/Pages/NaturalTreatment.dart';
 import 'package:flutter/material.dart';
 
+import 'homePage.dart';
+
 class PatientInfoPage extends StatelessWidget {
   int patientID;
 
@@ -13,10 +15,8 @@ class PatientInfoPage extends StatelessWidget {
           leading: IconButton(
               icon: Icon(Icons.arrow_back_ios),
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => NaturalTreatment()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
               })),
       body: Container(
         child: Center(
