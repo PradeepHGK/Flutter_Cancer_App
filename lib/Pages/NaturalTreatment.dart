@@ -1,9 +1,11 @@
+import 'package:demoapp/Pages/Models/NaturalTreatmentInfo.dart';
+import 'package:demoapp/Pages/PatientInfoPage.dart';
 import 'package:flutter/material.dart';
 
 class NaturalTreatment extends StatelessWidget {
   final _buttonColors = [
     Colors.redAccent,
-    Colors.yellow[200],
+    Colors.lightGreen[200],
     Colors.lightBlueAccent,
     Colors.blueGrey,
     Colors.black87
@@ -18,27 +20,59 @@ class NaturalTreatment extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: _buttonColors[index],
-                    borderRadius: BorderRadius.circular(5)),
-                height: 175,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text("Place Name",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    )
-                  ],
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+              child: FlatButton(
+                highlightColor: Colors.cyanAccent,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PatientInfoPage(index)));
+                  print("Hello -- $index");
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: _buttonColors[index],
+                      borderRadius: BorderRadius.circular(5)),
+                  height: 175,
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(naturalRemedyList[index].hospitalName,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                          Text("Age: ${naturalRemedyList[index].age}",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Price",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold)),
+                          Text("Age: 200",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold))
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             );
