@@ -12,6 +12,30 @@ class PatientInfoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          toolbarHeight: 80,
+          centerTitle: true,
+          actions: [
+            IconButton(icon: Icon(Icons.info_outline_rounded), onPressed: null)
+          ],
+          title: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Patient",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  "Info",
+                  style:
+                      TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
           leading: IconButton(
               icon: Icon(Icons.arrow_back_ios),
               onPressed: () {
