@@ -20,7 +20,7 @@ class NaturalTreatment extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 2),
               child: FlatButton(
                 highlightColor: Colors.cyanAccent,
                 onPressed: () {
@@ -30,48 +30,51 @@ class NaturalTreatment extends StatelessWidget {
                           builder: (context) => PatientInfoPage(index)));
                   print("Hello -- $index");
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: _buttonColors[index],
-                      borderRadius: BorderRadius.circular(5)),
-                  height: 175,
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(naturalRemedyList[index].hospitalName,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold)),
-                          Text("Age: ${naturalRemedyList[index].age}",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold))
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Price",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold)),
-                          Text("Age: 200",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold))
-                        ],
-                      )
-                    ],
+                child: Card(
+                  shadowColor: Colors.black,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: _buttonColors[index],
+                        borderRadius: BorderRadius.circular(5)),
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(naturalRemedyList[index].hospitalName,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold)),
+                            Text("Age: ${naturalRemedyList[index].age}",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold))
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Price",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold)),
+                            Text("Age: 200",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold))
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
