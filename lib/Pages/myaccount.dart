@@ -4,7 +4,7 @@ class Myaccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orangeAccent,
+      color: Colors.orange[800],
       child: Stack(
         children: [
           Column(
@@ -32,16 +32,33 @@ class Myaccount extends StatelessWidget {
                       BoxShadow(color: Colors.black45, blurRadius: 10)
                     ],
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(25)),
                 height: 500,
                 width: MediaQuery.of(context).size.width,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextButton(onPressed: () {}, child: Text("SignIn")),
-                    TextButton(onPressed: () {}, child: Text("SignUp"))
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "SignIn",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange[800]),
+                          )),
+                      TextButton(
+                          onPressed: () {},
+                          child: Text("SignUp",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.grey[400])))
+                    ],
+                  ),
                 ),
               ),
             ]),
