@@ -6,7 +6,7 @@ class FAQScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        physics: ,
+          physics: BouncingScrollPhysics(),
           itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
