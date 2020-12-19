@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:demoapp/Pages/FAQ.dart';
 import 'package:demoapp/Pages/GetStartedPage.dart';
 import 'package:demoapp/Pages/Hospitals.dart';
 import 'package:demoapp/Pages/Models/TabList.dart';
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Patients(),
               NaturalTreatment(),
               Hospitals(),
-              Products(),
+              FAQScreen()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(

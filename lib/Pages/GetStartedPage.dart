@@ -6,6 +6,8 @@ class GetStartedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
+      bottom: false,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         color: Colors.white,

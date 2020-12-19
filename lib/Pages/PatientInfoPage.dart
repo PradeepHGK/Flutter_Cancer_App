@@ -1,5 +1,6 @@
 import 'package:demoapp/Pages/NaturalTreatment.dart';
 import 'package:flutter/material.dart';
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 
 import 'homePage.dart';
 
@@ -71,6 +72,7 @@ class PatientInfoPage extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
+                shrinkWrap: true,
                   padding: EdgeInsets.all(5),
                   physics: BouncingScrollPhysics(),
                   itemCount: 6,
@@ -81,7 +83,18 @@ class PatientInfoPage extends StatelessWidget {
                           color: Colors.white54,
                           borderRadius: BorderRadius.circular(10)),
                       child: Card(
-                        child: ListTile(
+                        child: ExpansionTile(
+                          trailing: Icon(Icons.info_sharp),
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(loremIpsum(paragraphs: 3)),
+                                Text(loremIpsum(paragraphs: 3)),
+                                Text(loremIpsum(paragraphs: 3)),
+                              ],
+                            )
+                          ],
                           leading: FlutterLogo(),
                           title: Text("Hello"),
                         ),
