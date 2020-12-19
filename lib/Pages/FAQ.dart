@@ -6,6 +6,7 @@ class FAQScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
+        physics: ,
           itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
@@ -19,8 +20,9 @@ class FAQScreen extends StatelessWidget {
   Card buildExpansionTile(int index) {
     return Card(
       borderOnForeground: true,
-      color: Colors.grey,
+      color: Colors.white38,
       child: ExpansionTile(
+        leading: Icon(Icons.question_answer),
         maintainState: true,
         initiallyExpanded: false,
         title: ListTile(
@@ -32,7 +34,7 @@ class FAQScreen extends StatelessWidget {
         ),
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(loremIpsum(paragraphs: 2)),
           )
         ],
