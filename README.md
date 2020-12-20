@@ -16,6 +16,8 @@
 * BottomNavigationBar
 * Card
 
-### Issues Faced 
 
+### Issues Faced 
+* When using Expanded widget as a return widget of that class
+* row overflow
 ### Reference Links 
