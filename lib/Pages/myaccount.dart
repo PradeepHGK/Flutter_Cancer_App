@@ -15,7 +15,7 @@ class Myaccount extends StatelessWidget {
               right: 30,
               top: 30,
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   print("ClosebuttonPressed");
                 },
                 child: Container(
@@ -27,6 +27,41 @@ class Myaccount extends StatelessWidget {
                   ),
                 ),
               )),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 8,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: AssetImage("images/icons/SupportIcon.png"),
+                    height: 80,
+                    width: 80,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Support \nCancer",
+                    overflow: TextOverflow.visible,
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        letterSpacing: 10,
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontFamily: "WinterYesterday",
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -46,7 +81,17 @@ class Myaccount extends StatelessWidget {
               borderRadius: BorderRadius.circular(25)),
           height: 500,
           width: MediaQuery.of(context).size.width,
-          child: textButton(),
+          child: Material(
+                      child: Column(
+              children: [
+                textButton(),
+                Form(
+                    child: TextFormField(
+                  decoration: InputDecoration(hintText: "Username"),
+                ))
+              ],
+            ),
+          ),
         ),
       ]),
     );
@@ -70,26 +115,30 @@ class Myaccount extends StatelessWidget {
   Padding textButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Column(
         children: [
-          TextButton(
-              onPressed: () {},
-              child: Text(
-                "SignIn",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange[800]),
-              )),
-          TextButton(
-              onPressed: () {},
-              child: Text("SignUp",
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[400])))
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "SignIn",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange[800]),
+                  )),
+              TextButton(
+                  onPressed: () {},
+                  child: Text("SignUp",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey[400])))
+            ],
+          ),
         ],
       ),
     );
