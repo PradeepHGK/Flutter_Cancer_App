@@ -38,6 +38,6 @@ List<NaturalTreatmentInfo> naturalRemedyList = [
       loremIpsum(words: 10), ""),
   NaturalTreatmentInfo(loremIpsum(words: 2), 67, loremIpsum(paragraphs: 2),
       loremIpsum(words: 10), ""),
-  NaturalTreatmentInfo(loremIpsum(words: 2),55, loremIpsum(paragraphs: 2),
+  NaturalTreatmentInfo(loremIpsum(words: 2), 55, loremIpsum(paragraphs: 2),
       loremIpsum(words: 10), ""),
 ];
