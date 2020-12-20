@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:cupertino_icons/cupertino_icons.dart';
 
 class Myaccount extends StatelessWidget {
   @override
@@ -82,13 +84,37 @@ class Myaccount extends StatelessWidget {
           height: 500,
           width: MediaQuery.of(context).size.width,
           child: Material(
-                      child: Column(
+            child: Column(
               children: [
                 textButton(),
-                Form(
-                    child: TextFormField(
-                  decoration: InputDecoration(hintText: "Username"),
-                ))
+                
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  child: Form(
+                      child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.person_outline,
+                              color: Colors.orange,
+                            ),
+                            hintText: "Username"),
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.vpn_key_outlined,
+                              color: Colors.orange,
+                            ),
+                            hintText: "Password"),
+                      )
+                    ],
+                  )),
+                )
               ],
             ),
           ),
