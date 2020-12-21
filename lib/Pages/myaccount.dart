@@ -9,6 +9,7 @@ class Myaccount extends StatefulWidget {
 }
 
 class _MyaccountState extends State<Myaccount> {
+  
   bool isLoginEnabled;
 
   @override
@@ -16,6 +17,12 @@ class _MyaccountState extends State<Myaccount> {
     // TODO: implement initState
     isLoginEnabled = false;
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 
   @override
@@ -86,7 +93,7 @@ class _MyaccountState extends State<Myaccount> {
     );
   }
 
-  Padding topPanelContent(BuildContext context) {
+  Padding topPanelContent(BuildContext context) {s
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
