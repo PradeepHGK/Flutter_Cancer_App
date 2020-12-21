@@ -150,8 +150,28 @@ class _MyaccountState extends State<Myaccount> {
                 fillColor: Colors.orange[200]),
           ),
           signInSingUpButton("SignIn"),
-          Divider(
-            thickness: 2,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Divider(
+                    thickness: 3,
+                  ),
+                ),
+              ),
+              Text("or"),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Divider(
+                    thickness: 3,
+                  ),
+                ),
+              ),
+            ],
           ),
           signInSingUpButton("SignUp"),
         ],
