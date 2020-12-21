@@ -2,7 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
-class Myaccount extends StatelessWidget {
+class Myaccount extends StatefulWidget {
+  @override
+  _MyaccountState createState() => _MyaccountState();
+}
+
+class _MyaccountState extends State<Myaccount> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,47 +90,90 @@ class Myaccount extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 10)],
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(25)),
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(30)),
           height: 500,
           width: MediaQuery.of(context).size.width,
           child: Material(
             child: Column(
-              children: [
-                textButton(),
-                
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                  child: Form(
-                      child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.person_outline,
-                              color: Colors.orange,
-                            ),
-                            hintText: "Username"),
-                      ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.vpn_key_outlined,
-                              color: Colors.orange,
-                            ),
-                            hintText: "Password"),
-                      )
-                    ],
-                  )),
-                )
-              ],
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [textButton(), inputfield()],
             ),
           ),
         ),
       ]),
+    );
+  }
+
+  Padding inputfield() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      child: Form(
+          child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          TextFormField(
+            validator: (value) {
+              if (value.trim().isEmpty) {
+                return "email is required";
+              }
+              return null;
+            },
+            keyboardType: TextInputType.emailAddress,
+            decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.person_outline,
+                  color: Colors.orange,
+                ),
+                hintText: "Username"),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          TextFormField(
+            validator: (value) {
+              if (value.trim().isEmpty) {
+                return "email is required";
+              }
+              return null;
+            },
+            maxLength: 8,
+            obscureText: true,
+            decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.vpn_key_outlined,
+                  color: Colors.orange,
+                ),
+                hintText: "Password",
+                fillColor: Colors.orange[200]),
+          ),
+          signInSingUpButton("SignIn"),
+          Divider(
+            thickness: 2,
+          ),
+          signInSingUpButton("SignUp"),
+        ],
+      )),
+    );
+  }
+
+  Padding signInSingUpButton(String buttonName) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      child: ElevatedButton(
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          onPressed: null,
+          child: Text(
+            buttonName,
+            style: TextStyle(
+              letterSpacing: 5,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          )),
     );
   }
 
@@ -131,7 +185,7 @@ class Myaccount extends StatelessWidget {
           height: 300,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.white60,
           ),
         )
       ],
