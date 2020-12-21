@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'homePage.dart';
 
 class Myaccount extends StatefulWidget {
@@ -9,7 +8,6 @@ class Myaccount extends StatefulWidget {
 }
 
 class _MyaccountState extends State<Myaccount> {
-  
   bool isLoginEnabled;
 
   @override
@@ -93,7 +91,7 @@ class _MyaccountState extends State<Myaccount> {
     );
   }
 
-  Padding topPanelContent(BuildContext context) {s
+  Padding topPanelContent(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
