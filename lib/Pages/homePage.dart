@@ -70,25 +70,25 @@ class _HomeScreenState extends State<HomeScreen> {
               FAQScreen()
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
-              currentIndex: currentButtomIndex,
-              type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.yellow[100],
-              onTap: (indexValue) {
-                setState(() {
-                  currentButtomIndex = indexValue;
-                });
-                print(indexValue);
-              },
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.headset_rounded), label: "HeadSet"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.mediation_rounded), label: "Meditation"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.youtube_searched_for_rounded),
-                    label: "YT Search"),
-              ]),
+          // bottomNavigationBar: BottomNavigationBar(
+          //     currentIndex: currentButtomIndex,
+          //     type: BottomNavigationBarType.fixed,
+          //     backgroundColor: Colors.yellow[100],
+          //     onTap: (indexValue) {
+          //       setState(() {
+          //         currentButtomIndex = indexValue;
+          //       });
+          //       print(indexValue);
+          //     },
+          //     items: [
+          //       BottomNavigationBarItem(
+          //           icon: Icon(Icons.headset_rounded), label: "HeadSet"),
+          //       BottomNavigationBarItem(
+          //           icon: Icon(Icons.mediation_rounded), label: "Meditation"),
+          //       BottomNavigationBarItem(
+          //           icon: Icon(Icons.youtube_searched_for_rounded),
+          //           label: "YT Search"),
+          //     ]),
         ),
       ),
     );
