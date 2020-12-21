@@ -27,90 +27,88 @@ class Patients extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      elevation: 20,
-                      child: ExpansionTile(
-                          leading: Icon(Icons.local_hospital),
-                          maintainState: false,
-                          backgroundColor: Colors.white24,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Text(loremIpsum(paragraphs: 1)),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      FlatButton(
-                                          onPressed: () {
-                                            print("Call Pressed");
-                                          },
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                color: Colors.deepOrange,
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Icon(
-                                                  Icons.call,
-                                                  color: Colors.white,
-                                                ),
-                                                Text(
-                                                  "Call",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                )
-                                              ],
-                                            ),
-                                            height: 50,
-                                            width: 100,
-                                          )),
-                                      FlatButton(
-                                          onPressed: () {
-                                            print("Donate Pressed");
-                                          },
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                color: Colors.deepOrange,
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                Icon(
-                                                  Icons.donut_large_sharp,
-                                                  color: Colors.white,
-                                                ),
-                                                Text(
-                                                  "Donate",
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                )
-                                              ],
-                                            ),
-                                            height: 50,
-                                            width: 100,
-                                          )),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            )
-                          ],
-                          title: Text("Patient details")),
-                    ),
+                    child: buildCard(),
                   );
                 }))
       ],
+    );
+  }
+
+  Card buildCard() {
+    return Card(
+      elevation: 20,
+      child: ExpansionTile(
+          leading: Icon(Icons.local_hospital),
+          maintainState: false,
+          backgroundColor: Colors.white24,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Text(loremIpsum(paragraphs: 1)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      FlatButton(
+                          onPressed: () {
+                            print("Call Pressed");
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.deepOrange,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.call,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  "Call",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                            height: 50,
+                            width: 100,
+                          )),
+                      FlatButton(
+                          onPressed: () {
+                            print("Donate Pressed");
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.deepOrange,
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.donut_large_sharp,
+                                  color: Colors.white,
+                                ),
+                                Text(
+                                  "Donate",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                            height: 50,
+                            width: 100,
+                          )),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+          title: Text("Patient details")),
     );
   }
 
