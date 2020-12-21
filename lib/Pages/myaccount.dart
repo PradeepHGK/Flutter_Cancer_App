@@ -98,7 +98,7 @@ class _MyaccountState extends State<Myaccount> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [textButton(), inputfield()],
+              children: [authButtons(), inputfield()],
             ),
           ),
         ),
@@ -109,73 +109,81 @@ class _MyaccountState extends State<Myaccount> {
   Padding inputfield() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: Form(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          TextFormField(
-            validator: (value) {
-              if (value.trim().isEmpty) {
-                return "email is required";
-              }
-              return null;
-            },
-            keyboardType: TextInputType.emailAddress,
-            decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.person_outline,
-                  color: Colors.orange,
-                ),
-                hintText: "Username"),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          TextFormField(
-            validator: (value) {
-              if (value.trim().isEmpty) {
-                return "email is required";
-              }
-              return null;
-            },
-            maxLength: 8,
-            obscureText: true,
-            decoration: InputDecoration(
-                prefixIcon: Icon(
-                  Icons.vpn_key_outlined,
-                  color: Colors.orange,
-                ),
-                hintText: "Password",
-                fillColor: Colors.orange[200]),
-          ),
-          signInSingUpButton("SignIn"),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Divider(
-                    thickness: 3,
-                  ),
-                ),
+      child: loginForm(),
+    );
+  }
+
+  Form loginForm() {
+    return Form(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        TextFormField(
+          validator: (value) {
+            if (value.trim().isEmpty) {
+              return "email is required";
+            }
+            return null;
+          },
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.person_outline,
+                color: Colors.orange,
               ),
-              Text("or"),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Divider(
-                    thickness: 3,
-                  ),
-                ),
+              hintText: "Username"),
+        ),
+        SizedBox(
+          height: 50,
+        ),
+        TextFormField(
+          validator: (value) {
+            if (value.trim().isEmpty) {
+              return "email is required";
+            }
+            return null;
+          },
+          maxLength: 8,
+          obscureText: true,
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.vpn_key_outlined,
+                color: Colors.orange,
               ),
-            ],
+              hintText: "Password",
+              fillColor: Colors.orange[200]),
+        ),
+        signInSingUpButton("SignIn"),
+        dividerWithText(),
+        signInSingUpButton("SignUp"),
+      ],
+    ));
+  }
+
+  Row dividerWithText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Divider(
+              thickness: 3,
+            ),
           ),
-          signInSingUpButton("SignUp"),
-        ],
-      )),
+        ),
+        Text("or"),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Divider(
+              thickness: 3,
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -212,7 +220,7 @@ class _MyaccountState extends State<Myaccount> {
     );
   }
 
-  Padding textButton() {
+  Padding authButtons() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
