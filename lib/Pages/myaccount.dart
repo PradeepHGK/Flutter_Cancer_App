@@ -9,9 +9,12 @@ class Myaccount extends StatefulWidget {
 }
 
 class _MyaccountState extends State<Myaccount> {
+  bool isLoginEnabled;
+
   @override
   void initState() {
     // TODO: implement initState
+    isLoginEnabled = false;
     super.initState();
   }
 
@@ -111,8 +114,8 @@ class _MyaccountState extends State<Myaccount> {
 
   Padding inputfield() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: loginForm(),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: isLoginEnabled ? loginForm() : singUpForm(),
     );
   }
 
@@ -157,9 +160,75 @@ class _MyaccountState extends State<Myaccount> {
               hintText: "Password",
               fillColor: Colors.orange[200]),
         ),
-        signInSingUpButton("SignIn"),
+        signInButton("SignIn"),
         dividerWithText(),
-        signInSingUpButton("SignUp"),
+        singUpButton("SignUp"),
+      ],
+    ));
+  }
+
+  Form singUpForm() {
+    return Form(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        TextFormField(
+          validator: (value) {
+            if (value.trim().isEmpty) {
+              return "email is required";
+            }
+            return null;
+          },
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.person_outline,
+                color: Colors.orange,
+              ),
+              hintText: "Username or email"),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        TextFormField(
+          validator: (value) {
+            if (value.trim().isEmpty) {
+              return "email is required";
+            }
+            return null;
+          },
+          keyboardType: TextInputType.emailAddress,
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.person_outline,
+                color: Colors.orange,
+              ),
+              hintText: "password"),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        TextFormField(
+          validator: (value) {
+            if (value.trim().isEmpty) {
+              return "email is required";
+            }
+            return null;
+          },
+          maxLength: 8,
+          obscureText: true,
+          decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.vpn_key_outlined,
+                color: Colors.orange,
+              ),
+              hintText: "confirm password",
+              fillColor: Colors.orange[200]),
+        ),
+        signInButton("SignIn"),
+        dividerWithText(),
+        singUpButton("SignUp"),
       ],
     ));
   }
@@ -190,7 +259,25 @@ class _MyaccountState extends State<Myaccount> {
     );
   }
 
-  Padding signInSingUpButton(String buttonName) {
+  Padding signInButton(String buttonName) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      child: ElevatedButton(
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          onPressed: null,
+          child: Text(
+            buttonName,
+            style: TextStyle(
+              letterSpacing: 5,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          )),
+    );
+  }
+
+  Padding singUpButton(String buttonName) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
       child: ElevatedButton(
@@ -233,21 +320,33 @@ class _MyaccountState extends State<Myaccount> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      isLoginEnabled = true;
+                    });
+                    print("isLogin: $isLoginEnabled");
+                  },
                   child: Text(
                     "SignIn",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.orange[800]),
+                        color:
+                            isLoginEnabled ? Colors.orange[800] : Colors.grey),
                   )),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      isLoginEnabled = false;
+                    });
+                  },
                   child: Text("SignUp",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.grey[400])))
+                          color: isLoginEnabled
+                              ? Colors.grey[400]
+                              : Colors.orange[800])))
             ],
           ),
         ],
