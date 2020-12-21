@@ -47,44 +47,48 @@ class GetStartedScreen extends StatelessWidget {
             SizedBox(
               height: 90,
             ),
-            FlatButton(
-              highlightColor: Colors.white,
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                child: Center(
-                    child: Text(
-                  "Get Started",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontStyle: FontStyle.normal,
-                    decorationStyle: TextDecorationStyle.solid,
-                    decoration: TextDecoration.none,
-                  ),
-                )),
-                height: 80,
-                width: 280,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      colors: [
-                        Colors.greenAccent[200],
-                        Colors.green[400],
-                        Colors.green[900]
-                      ],
-                    )),
-              ),
-            )
+            getStartedButton(context)
           ],
         ),
+      ),
+    );
+  }
+
+  FlatButton getStartedButton(BuildContext context) {
+    return FlatButton(
+      highlightColor: Colors.white,
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      },
+      child: Container(
+        alignment: Alignment.bottomCenter,
+        child: Center(
+            child: Text(
+          "Get Started",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 32,
+            fontStyle: FontStyle.normal,
+            decorationStyle: TextDecorationStyle.solid,
+            decoration: TextDecoration.none,
+          ),
+        )),
+        height: 80,
+        width: 280,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30)),
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              colors: [
+                Colors.greenAccent[200],
+                Colors.green[400],
+                Colors.green[900]
+              ],
+            )),
       ),
     );
   }
