@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
+
+import 'homePage.dart';
 
 class Myaccount extends StatefulWidget {
   @override
@@ -23,13 +24,15 @@ class _MyaccountState extends State<Myaccount> {
           backgroundDesign(context),
           topPanelContent(context),
           Positioned(
-              height: 50,
+              height: MediaQuery.of(context).size.height / 8,
               width: 50,
               right: 30,
               top: 30,
               child: GestureDetector(
                 onTap: () {
                   print("ClosebuttonPressed");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()));
                 },
                 child: Container(
                   color: Colors.transparent,
