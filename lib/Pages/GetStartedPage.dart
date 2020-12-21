@@ -1,8 +1,31 @@
 import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
-class GetStartedScreen extends StatelessWidget {
+class GetStartedScreen extends StatefulWidget {
+  @override
+  _GetStartedScreenState createState() => _GetStartedScreenState();
+}
+
+class _GetStartedScreenState extends State<GetStartedScreen> {
+  bool isSwipeEnded;
+  final _colors = [
+    Colors.green,
+    Colors.grey,
+    Colors.limeAccent,
+    Colors.purpleAccent,
+    Colors.teal,
+    Colors.cyanAccent
+  ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    isSwipeEnded = false;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -11,46 +34,74 @@ class GetStartedScreen extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         color: Colors.white,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 150,
-            ),
-            Image.asset(
-              "images/ProfileImages/CancerIcon.png",
-              alignment: Alignment.topCenter,
-              height: 250,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text(
-              "Welcome",
-              style: TextStyle(
-                  letterSpacing: 15,
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontStyle: FontStyle.normal,
-                  decorationStyle: TextDecorationStyle.solid,
-                  decoration: TextDecoration.none),
-            ),
-            Text(
-              loremIpsum(words: 20),
-              style: TextStyle(
-                  decoration: TextDecoration.none,
-                  fontStyle: FontStyle.normal,
-                  color: Colors.black,
-                  decorationStyle: TextDecorationStyle.solid,
-                  fontSize: 15),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 90,
-            ),
-            getStartedButton(context)
-          ],
+        child: Swiper(
+          loop: false,
+          itemCount: _colors.length,
+          itemHeight: MediaQuery.of(context).size.height - 40,
+          itemWidth: MediaQuery.of(context).size.width - 20,
+          layout: SwiperLayout.STACK,
+          onIndexChanged: (value) {
+            print("$value");
+            setState(() {
+              if (value == _colors.length - 1) {
+                print("hello$value");
+                CircularProgressIndicator();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+              }
+            });
+          },
+          itemBuilder: (context, index) {
+            return Container(
+              height: 100,
+              width: 100,
+              color: _colors[index],
+            );
+          },
         ),
       ),
+    );
+  }
+
+  Column pageContentLogo(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 150,
+        ),
+        Image.asset(
+          "images/ProfileImages/CancerIcon.png",
+          alignment: Alignment.topCenter,
+          height: 250,
+        ),
+        SizedBox(
+          height: 30,
+        ),
+        Text(
+          "Welcome",
+          style: TextStyle(
+              letterSpacing: 15,
+              color: Colors.black,
+              fontSize: 30,
+              fontStyle: FontStyle.normal,
+              decorationStyle: TextDecorationStyle.solid,
+              decoration: TextDecoration.none),
+        ),
+        Text(
+          loremIpsum(words: 20),
+          style: TextStyle(
+              decoration: TextDecoration.none,
+              fontStyle: FontStyle.normal,
+              color: Colors.black,
+              decorationStyle: TextDecorationStyle.solid,
+              fontSize: 15),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: 90,
+        ),
+        getStartedButton(context)
+      ],
     );
   }
 

@@ -29,6 +29,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   font_awesome_flutter: ^8.10.0
   lorem_ipsum: ^0.0.1
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:
