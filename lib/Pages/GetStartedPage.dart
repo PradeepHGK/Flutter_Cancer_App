@@ -1,4 +1,5 @@
 import 'package:demoapp/Pages/homePage.dart';
+import 'package:demoapp/Pages/myaccount.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
@@ -10,14 +11,7 @@ class GetStartedScreen extends StatefulWidget {
 
 class _GetStartedScreenState extends State<GetStartedScreen> {
   bool isSwipeEnded;
-  final _colors = [
-    Colors.green,
-    Colors.grey,
-    Colors.limeAccent,
-    Colors.purpleAccent,
-    Colors.teal,
-    Colors.cyanAccent
-  ];
+  final _colors = [Colors.green, Colors.grey, Colors.cyanAccent];
 
   @override
   void initState() {
@@ -33,21 +27,21 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
       bottom: false,
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        color: Colors.white,
+        color: Colors.black87,
         child: Swiper(
           loop: false,
           itemCount: _colors.length,
-          itemHeight: MediaQuery.of(context).size.height - 40,
+          itemHeight: MediaQuery.of(context).size.height - 150,
           itemWidth: MediaQuery.of(context).size.width - 20,
           layout: SwiperLayout.STACK,
+          pagination: new SwiperPagination(alignment: Alignment.bottomCenter),
           onIndexChanged: (value) {
-            print("$value");
             setState(() {
               if (value == _colors.length - 1) {
                 print("hello$value");
                 CircularProgressIndicator();
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                    MaterialPageRoute(builder: (context) => Myaccount()));
               }
             });
           },
