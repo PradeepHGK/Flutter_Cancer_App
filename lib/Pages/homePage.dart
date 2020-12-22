@@ -32,18 +32,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 physics: BouncingScrollPhysics(),
                 isScrollable: true,
                 tabs: listTabs.toList(growable: true)),
-            title: Center(
-              child: Text(
-                "Support Cancer",
-                style: TextStyle(letterSpacing: 7),
+            title: Text(
+              "Support Cancer",
+              style: TextStyle(
+                  letterSpacing: 3,
+                  fontFamily: "WinterYesterday",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
+            ),
+            leading: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 10,
+                width: 10,
+                child: Image(
+                  image: AssetImage("images/icons/SupportIcon.png"),
+                  isAntiAlias: true,
+                  color: Colors.white,
+                  alignment: Alignment.topLeft,
+                ),
               ),
             ),
-            leading: IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-                onPressed: null),
             actions: [
               GestureDetector(
                 onTap: () {
