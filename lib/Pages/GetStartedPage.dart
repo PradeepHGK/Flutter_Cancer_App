@@ -25,23 +25,30 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
     return SafeArea(
       top: false,
       bottom: false,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        color: Colors.black87,
+      child: buildSwiper(context),
+    );
+  }
+
+  Container buildSwiper(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      color: Colors.white,
+      child: Padding(
+        padding:
+            const EdgeInsets.only(bottom: 100, right: 10, left: 10, top: 10),
         child: Swiper(
           loop: false,
           itemCount: _colors.length,
           itemHeight: MediaQuery.of(context).size.height - 150,
-          itemWidth: MediaQuery.of(context).size.width - 20,
-          layout: SwiperLayout.STACK,
+          itemWidth: MediaQuery.of(context).size.width - 50,
           pagination: new SwiperPagination(alignment: Alignment.bottomCenter),
           onIndexChanged: (value) {
             setState(() {
               if (value == _colors.length - 1) {
                 print("hello$value");
-                CircularProgressIndicator();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Myaccount()));
+                getStartedbutton(context);
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => Myaccount()));
               }
             });
           },
@@ -54,6 +61,15 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
           },
         ),
       ),
+    );
+  }
+
+  Widget getStartedbutton(BuildContext context) {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      height: 100,
+      width: MediaQuery.of(context).size.width - 30,
+      color: Colors.white12,
     );
   }
 
