@@ -1,6 +1,7 @@
 import 'package:demoapp/Pages/homePage.dart';
 import 'package:demoapp/Pages/myaccount.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
@@ -13,10 +14,15 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
   bool isSwipeEnded;
   final _colors = [Colors.green, Colors.grey, Colors.cyanAccent];
 
+  //pageview properties
+  final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage;
+
   @override
   void initState() {
     // TODO: implement initState
     isSwipeEnded = false;
+    _currentPage = 0;
     super.initState();
   }
 
@@ -25,10 +31,111 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
     return SafeArea(
       top: false,
       bottom: false,
-      child: buildSwiper(context),
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+              color: Colors.white54,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(20))),
+          child: PageView.builder(
+            clipBehavior: Clip.antiAlias,
+            itemCount: 4,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "images/ProfileImages/CancerIcon.webp",
+                      height: MediaQuery.of(context).size.height / 3,
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                    Text(
+                      loremIpsum(words: 2),
+                      style: TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      loremIpsum(words: 10),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    )
+                  ],
+                ),
+              );
+            },
+            scrollDirection: Axis.horizontal,
+            controller: _pageController,
+            onPageChanged: (int value) {
+              setState(() {
+                _currentPage = value;
+              });
+            },
+          ),
+        ),
+        bottomSheet: bottomMenu(context),
+      ),
     );
   }
 
+  Container bottomMenu(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10), topRight: Radius.circular(10))),
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextButton(
+            onPressed: () {},
+            child: Text("Skip"),
+          ),
+          for (var i = 0; i < 4; i++)
+            _currentPage == i ? pageIndicator(true) : pageIndicator(false),
+          TextButton(
+              onPressed: () {
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => Myaccount()));
+              },
+              child: Text("Next"))
+        ],
+      ),
+    );
+  }
+
+  Row pageIndicator(bool iscurrentPage) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Container(
+          height: iscurrentPage ? 10 : 3,
+          width: iscurrentPage ? 10 : 3,
+          decoration: BoxDecoration(
+              color: Colors.redAccent,
+              borderRadius: BorderRadius.circular(
+                10,
+              )),
+        ),
+      ],
+    );
+  }
+
+  //fluter swiper plugin swipe test
   Container buildSwiper(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),

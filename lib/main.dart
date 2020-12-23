@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Support Cancer',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        //primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: GetStartedScreen(),
