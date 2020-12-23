@@ -85,12 +85,14 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
             },
           ),
         ),
-        bottomSheet: bottomMenu(context),
+        bottomSheet: _currentPage == 4 - 1
+            ? bottomMenu(context, true)
+            : bottomMenu(context),
       ),
     );
   }
 
-  Container bottomMenu(BuildContext context) {
+  Container bottomMenu(BuildContext context, [bool islastPage = false]) {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white10,
@@ -108,10 +110,12 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
           for (var i = 0; i < 4; i++)
             _currentPage == i ? pageIndicator(true) : pageIndicator(false),
           TextButton(
-              onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => Myaccount()));
-              },
+              onPressed: islastPage
+                  ? () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Myaccount()));
+                    }
+                  : null,
               child: Text("Next"))
         ],
       ),
