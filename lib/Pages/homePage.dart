@@ -1,12 +1,9 @@
 import 'dart:ui';
 import 'package:demoapp/Pages/FAQ.dart';
-import 'package:demoapp/Pages/GetStartedPage.dart';
 import 'package:demoapp/Pages/Hospitals.dart';
 import 'package:demoapp/Pages/Models/TabList.dart';
 import 'package:demoapp/Pages/NaturalTreatment.dart';
 import 'package:demoapp/Pages/Patients.dart';
-import 'package:demoapp/Pages/Products.dart';
-import 'package:demoapp/Pages/ProfilePage.dart';
 import 'package:demoapp/Pages/myaccount.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
