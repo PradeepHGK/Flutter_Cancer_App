@@ -104,7 +104,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           TextButton(
-            onPressed: () {},
+            onPressed: onPressSkipBtn,
             child: Text("Skip"),
           ),
           for (var i = 0; i < 4; i++)
@@ -122,13 +122,18 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
     );
   }
 
+  void onPressSkipBtn() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Myaccount()));
+  }
+
   Row pageIndicator(bool iscurrentPage) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          height: iscurrentPage ? 10 : 3,
-          width: iscurrentPage ? 10 : 3,
+          height: iscurrentPage ? 10 : 5,
+          width: iscurrentPage ? 10 : 5,
           decoration: BoxDecoration(
               color: Colors.redAccent,
               borderRadius: BorderRadius.circular(
