@@ -13,37 +13,37 @@ List<HospitalModel> hospitalList = [
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address1"),
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address2"),
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address3"),
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address4"),
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address5"),
   HospitalModel(
       "KMCH",
       "Lorem Epsium",
-      "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "https://deltabackend.s3-ap-southeast-1.amazonaws.com/7774.jpg",
       0.9,
       "Address6"),
 ];
