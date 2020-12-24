@@ -79,8 +79,10 @@ class Patients extends StatelessWidget {
           children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset("images/homepage.jpeg",
-                    height: 100, fit: BoxFit.fill)),
+                child: Image.network(
+                    "https://loremflickr.com/480/240?dog=$index",
+                    height: 100,
+                    fit: BoxFit.fill)),
             SizedBox(
               height: 30,
             ),

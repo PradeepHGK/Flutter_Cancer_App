@@ -39,7 +39,7 @@ class Hospitals extends StatelessWidget {
                         placeholderFadeInDuration: Duration(milliseconds: 200),
                         fit: BoxFit.fitHeight,
                         height: 290,
-                        imageUrl: hospitalList[index].hospitalImageURL,
+                        imageUrl: "https://loremflickr.com/480/240?dog=$index",
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
                           child: CircularProgressIndicator(
