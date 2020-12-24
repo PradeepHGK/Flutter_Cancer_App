@@ -26,23 +26,25 @@ class Hospitals extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.white,
-                          offset: Offset(0.0, 1.0), //(x,y)
+                          color: Colors.black12,
+                          offset: Offset(0.0, 0.3), //(x,y)
                           blurRadius: 6.0,
                         )
                       ]),
-                  height: 290,
+                  height: MediaQuery.of(context).size.height / 3,
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
                     children: [
                       CachedNetworkImage(
+                        placeholderFadeInDuration: Duration(milliseconds: 200),
+                        fit: BoxFit.fitHeight,
+                        height: 290,
                         imageUrl: hospitalList[index].hospitalImageURL,
                         progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                Center(
-                                  child: CircularProgressIndicator(
-                                      value: downloadProgress.progress),
-                                ),
+                            (context, url, downloadProgress) => Center(
+                          child: CircularProgressIndicator(
+                              value: downloadProgress.progress),
+                        ),
                         // placeholder: (context, url) =>
                         //     Center(child: CircularProgressIndicator()),
                         errorWidget: (context, url, error) => Icon(Icons.error),
@@ -65,15 +67,29 @@ class Hospitals extends StatelessWidget {
                       Positioned(
                           left: 20,
                           bottom: 20,
-                          child: CircleAvatar(
-                            child: Text(
-                              "#1",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                            radius: 25,
-                            backgroundColor: Colors.lightBlueAccent,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              CircleAvatar(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      "#1",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ],
+                                ),
+                                radius: 25,
+                                backgroundColor: Colors.lightBlueAccent,
+                              ),
+                              Text(
+                                hospitalList[index].hospitalName,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              )
+                            ],
                           )),
-                      Text(hospitalList[index].hospitalName)
                     ],
                   ),
                 ),
