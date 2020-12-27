@@ -101,14 +101,24 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
       height: 100,
       width: MediaQuery.of(context).size.width,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          TextButton(
-            onPressed: onPressSkipBtn,
-            child: Text("Skip"),
+          // TextButton(
+          //   onPressed: onPressSkipBtn,
+          //   child: Text("Skip"),
+          // ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                for (var i = 0; i < 4; i++)
+                  _currentPage == i
+                      ? pageIndicator(true)
+                      : pageIndicator(false),
+              ],
+            ),
           ),
-          for (var i = 0; i < 4; i++)
-            _currentPage == i ? pageIndicator(true) : pageIndicator(false),
           TextButton(
               onPressed: islastPage
                   ? () {
@@ -132,14 +142,17 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          height: iscurrentPage ? 10 : 5,
-          width: iscurrentPage ? 10 : 5,
+          height: iscurrentPage ? 8 : 8,
+          width: iscurrentPage ? 8 : 8,
           decoration: BoxDecoration(
-              color: Colors.redAccent,
+              color: iscurrentPage ? Colors.blue : Colors.grey,
               borderRadius: BorderRadius.circular(
                 10,
               )),
         ),
+        SizedBox(
+          width: 10,
+        )
       ],
     );
   }
