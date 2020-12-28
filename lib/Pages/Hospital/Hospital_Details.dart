@@ -1,4 +1,4 @@
-import 'package:demoapp/Pages/Hospitals.dart';
+import 'package:demoapp/Pages/Hospital/Hospitals.dart';
 import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
 

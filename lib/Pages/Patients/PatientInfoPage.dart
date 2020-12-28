@@ -1,8 +1,8 @@
-import 'package:demoapp/Pages/NaturalTreatment.dart';
+import 'package:demoapp/Pages/NaturalTreatment/NaturalTreatment.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
-import 'homePage.dart';
+import '../homePage.dart';
 
 class PatientInfoPage extends StatelessWidget {
   int patientID;

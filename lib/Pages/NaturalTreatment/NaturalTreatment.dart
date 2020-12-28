@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:demoapp/Pages/Models/NaturalTreatmentInfo.dart';
-import 'package:demoapp/Pages/PatientInfoPage.dart';
+import 'package:demoapp/Pages/Patients/PatientInfoPage.dart';
 import 'package:flutter/material.dart';
 
 class NaturalTreatment extends StatelessWidget {

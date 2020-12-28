@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:demoapp/Pages/Hospital_Details.dart';
+import 'package:demoapp/Pages/Hospital/Hospital_Details.dart';
 import 'package:demoapp/Pages/Models/HospitalModel.dart';
 import 'package:flutter/material.dart';
-import 'Models/HospitalModel.dart';
+import '../Models/HospitalModel.dart';
 
 class Hospitals extends StatelessWidget {
   @override
