@@ -4,6 +4,7 @@ import 'package:demoapp/Pages/Hospital/Hospitals.dart';
 import 'package:demoapp/Pages/Models/TabList.dart';
 import 'package:demoapp/Pages/NaturalTreatment/NaturalTreatment.dart';
 import 'package:demoapp/Pages/Patients/Patients.dart';
+import 'package:demoapp/Pages/Profile/userdetails.dart';
 import 'package:demoapp/Pages/myaccount.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -77,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen>
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Myaccount()));
+                      MaterialPageRoute(builder: (context) => UserDetails()));
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
