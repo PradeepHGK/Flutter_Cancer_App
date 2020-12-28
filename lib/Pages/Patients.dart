@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
@@ -174,12 +175,12 @@ class Patients extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 5,
           itemBuilder: (context, index) {
-            return horizontalPatientlist();
+            return horizontalPatientlist(index);
           }),
     );
   }
 
-  Container horizontalPatientlist() {
+  Container horizontalPatientlist(int index) {
     return Container(
       color: Colors.transparent,
       padding: EdgeInsets.all(5.0),
@@ -189,7 +190,15 @@ class Patients extends StatelessWidget {
         children: [
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image(image: AssetImage("images/homepage.jpeg"))),
+              child: CachedNetworkImage(
+                imageUrl: "https://loremflickr.com/720/480?dog=$index",
+                placeholder: (context, value){
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                },
+                fit: BoxFit.fill,
+              )),
           Positioned(
             left: 10,
             bottom: 10,

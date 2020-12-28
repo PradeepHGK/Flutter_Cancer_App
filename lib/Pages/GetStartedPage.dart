@@ -39,6 +39,8 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                   bottomLeft: Radius.circular(30),
                   bottomRight: Radius.circular(20))),
           child: PageView.builder(
+            physics: ClampingScrollPhysics(),
+            allowImplicitScrolling: true,
             clipBehavior: Clip.antiAlias,
             itemCount: 4,
             itemBuilder: (context, index) {
@@ -51,6 +53,9 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                       "images/ProfileImages/CancerIcon.webp",
                       height: MediaQuery.of(context).size.height / 3,
                       width: MediaQuery.of(context).size.width,
+                    ),
+                    SizedBox(
+                      height: 80,
                     ),
                     Text(
                       loremIpsum(words: 2),
