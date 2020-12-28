@@ -1,3 +1,4 @@
+import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
@@ -18,13 +19,14 @@ class _UserDetailsState extends State<UserDetails> {
               Stack(children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.purple,
+                      color: Colors.blue[800],
                       borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(20),
                           bottomLeft: Radius.circular(20))),
                   height: MediaQuery.of(context).size.height / 4 - 50,
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     IconButton(
@@ -32,9 +34,15 @@ class _UserDetailsState extends State<UserDetails> {
                           Icons.arrow_back,
                           color: Colors.white,
                         ),
-                        onPressed: null),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
+                        }),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 15),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -59,11 +67,15 @@ class _UserDetailsState extends State<UserDetails> {
                           ),
                           CircleAvatar(
                             radius: 30,
-                            backgroundImage: AssetImage("images/icons/doctor.png"),
+                            backgroundImage:
+                                AssetImage("images/icons/doctor.png"),
                           )
                         ],
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
                   ],
                 )
               ])
@@ -72,5 +84,28 @@ class _UserDetailsState extends State<UserDetails> {
         ),
       ),
     );
+  }
+
+  Container buildGridBuilder(BuildContext context) {
+    return Container(
+        height: 100,
+        color: Colors.blue[100],
+        width: MediaQuery.of(context).size.width,
+        child: GridView.builder(
+            physics: BouncingScrollPhysics(),
+            itemCount: 10,
+            scrollDirection: Axis.horizontal,
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
+            itemBuilder: (BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  color: Colors.blueAccent,
+                  height: 40,
+                  width: 500,
+                ),
+              );
+            }));
   }
 }
