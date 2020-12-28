@@ -82,8 +82,9 @@ class _HomeScreenState extends State<HomeScreen>
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.blueAccent,
+                    radius: 18,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage("images/icons/doctor.png"),
                   ),
                 ),
               )
