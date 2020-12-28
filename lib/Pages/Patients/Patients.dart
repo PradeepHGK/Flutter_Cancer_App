@@ -7,20 +7,33 @@ class Patients extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Padding(
-        //   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.start,
-        //     children: [
-        //       Text("Patients",
-        //           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-        //     ],
-        //   ),
-        // ),
+        SizedBox(
+          height: 10,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text("Most Viewed",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ),
         SizedBox(
           height: 10,
         ),
         patientScrollList(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text("All",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            ],
+          ),
+        ),
         Expanded(
             child: ListView.builder(
                 physics: BouncingScrollPhysics(),
@@ -192,7 +205,7 @@ class Patients extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: CachedNetworkImage(
                 imageUrl: "https://loremflickr.com/720/480?dog=$index",
-                placeholder: (context, value){
+                placeholder: (context, value) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
