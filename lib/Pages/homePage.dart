@@ -66,11 +66,25 @@ class _HomeScreenState extends State<HomeScreen>
               child: Container(
                 height: 10,
                 width: 10,
-                child: Image(
-                  image: AssetImage("images/icons/SupportIcon.png"),
-                  isAntiAlias: true,
-                  color: Colors.white,
-                  alignment: Alignment.topLeft,
+                child: GestureDetector(
+                  onTap: () {
+                    showAboutDialog(
+                      children: [
+                        Text('This is an About Dialog in Flutter'),
+                      ],
+                      context: context,
+                      applicationIcon: FlutterLogo(),
+                      applicationName: "Support Cancer",
+                      applicationVersion: "0.1",
+                      useRootNavigator: true,
+                    );
+                  },
+                  child: Image(
+                    image: AssetImage("images/icons/SupportIcon.png"),
+                    isAntiAlias: true,
+                    color: Colors.white,
+                    alignment: Alignment.topLeft,
+                  ),
                 ),
               ),
             ),
