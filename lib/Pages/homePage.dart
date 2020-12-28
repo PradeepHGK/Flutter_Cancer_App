@@ -13,8 +13,30 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  TabController _tarbarController;
+
   var currentButtomIndex = 0;
+  var currentTabIndex;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    currentTabIndex = 0;
+    _tarbarController =
+        TabController(length: listTabs.length, vsync: this, initialIndex: 0);
+    _tarbarController.addListener(() {
+      currentTabIndex = _tarbarController.index;
+      print("TabClicked: $currentTabIndex");
+    });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
+              controller: _tarbarController,
                 indicatorColor: Colors.black,
                 physics: BouncingScrollPhysics(),
                 isScrollable: true,
@@ -69,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
             elevation: 0,
           ),
           body: TabBarView(
+            controller: _tarbarController,
             children: [
               Patients(),
               NaturalTreatment(),

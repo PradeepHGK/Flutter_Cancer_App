@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:demoapp/Pages/Hospital_Details.dart';
 import 'package:demoapp/Pages/Models/HospitalModel.dart';
 import 'package:flutter/material.dart';
 import 'Models/HospitalModel.dart';
@@ -20,6 +21,10 @@ class Hospitals extends StatelessWidget {
               FlatButton(
                 onPressed: () {
                   print("Hospital Button $index");
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Hospital_Details()));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -39,7 +44,7 @@ class Hospitals extends StatelessWidget {
                         placeholderFadeInDuration: Duration(milliseconds: 200),
                         fit: BoxFit.fitHeight,
                         height: 290,
-                        imageUrl: "https://loremflickr.com/480/240?dog=$index",
+                        imageUrl: hospitalList[index].hospitalImageURL,
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
                           child: CircularProgressIndicator(

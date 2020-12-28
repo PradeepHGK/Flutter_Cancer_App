@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:demoapp/Pages/Models/NaturalTreatmentInfo.dart';
 import 'package:demoapp/Pages/PatientInfoPage.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +12,8 @@ class NaturalTreatment extends StatelessWidget {
     Colors.blueGrey,
     Colors.black87
   ];
+
+  var parseJSON = JsonDecoder();
 
   @override
   Widget build(BuildContext context) {
