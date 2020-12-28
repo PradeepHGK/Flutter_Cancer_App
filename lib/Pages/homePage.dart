@@ -48,6 +48,9 @@ class _HomeScreenState extends State<HomeScreen>
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
+                onTap: (value) {
+                  print("TabValue: $value");
+                },
                 controller: _tarbarController,
                 indicatorColor: Colors.black,
                 physics: BouncingScrollPhysics(),
