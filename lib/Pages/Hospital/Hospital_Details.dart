@@ -29,10 +29,8 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomeScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   }),
               Align(
                 alignment: Alignment.bottomCenter,
@@ -54,8 +52,7 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   loremIpsum(words: 3),
@@ -87,16 +84,26 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                             Text(
                               "City",
                               style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 15, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              "Address",
+                              loremIpsum(words: 10),
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(color: Colors.blue),
                             ),
-                            Text("Subtitle"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Contact Details: 99073 - 87267",
+                              style: TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
+                            ),
                           ],
                         ),
                       ),
@@ -109,7 +116,7 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(20),
                                 topRight: Radius.circular(20))),
-                        height: MediaQuery.of(context).size.height / 2 - 50,
+                        height: MediaQuery.of(context).size.height / 2 - 80,
                         width: MediaQuery.of(context).size.width,
                       ),
                     )
