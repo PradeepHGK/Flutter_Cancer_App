@@ -89,7 +89,7 @@ class _UserDetailsState extends State<UserDetails> {
   Container buildGridBuilder(BuildContext context) {
     return Container(
         height: 100,
-        color: Colors.blue[100],
+        color: Colors.blue[500],
         width: MediaQuery.of(context).size.width,
         child: GridView.builder(
             physics: BouncingScrollPhysics(),
@@ -102,7 +102,7 @@ class _UserDetailsState extends State<UserDetails> {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   color: Colors.blueAccent,
-                  height: 40,
+                  height: 50,
                   width: 500,
                 ),
               );
