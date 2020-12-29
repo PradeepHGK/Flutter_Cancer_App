@@ -76,178 +76,214 @@ class _UserDetailsState extends State<UserDetails> {
                     SizedBox(
                       height: 20,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white60,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      ),
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      )
-                                    ]),
-                                height: 100,
-                                width: MediaQuery.of(context).size.width / 2.2,
-                                child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            "Age",
-                                            style: TextStyle(
-                                                color: Colors.red,
-                                                fontSize: 25,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Icon(Icons.agriculture)
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white60,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      ),
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      )
-                                    ]),
-                                height: 100,
-                                width: MediaQuery.of(context).size.width / 2.2,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Stage",
-                                        style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Icon(Icons.military_tech)
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white60,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      ),
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      )
-                                    ]),
-                                height: 100,
-                                width: MediaQuery.of(context).size.width / 2.2,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Type",
-                                        style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 25,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Icon(Icons.merge_type)
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Colors.white60,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      ),
-                                      BoxShadow(
-                                        color: Colors.black12,
-                                      )
-                                    ]),
-                                height: 100,
-                                width: MediaQuery.of(context).size.width / 2.2,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Diagnosed Date",
-                                        style: TextStyle(
-                                            color: Colors.red,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Icon(
-                                        Icons.date_range,
-                                        color: Colors.green,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    )
+                    buildBasicDetails(context)
                   ],
                 )
               ])
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Padding buildBasicDetails(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [addAge(context), addStage(context)],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [addType(context), addDiagnosedDate(context)],
+          )
+        ],
+      ),
+    );
+  }
+
+  Container addDiagnosedDate(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white60,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+            ),
+            BoxShadow(
+              color: Colors.black12,
+            )
+          ]),
+      height: 100,
+      width: MediaQuery.of(context).size.width / 2.2,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Diagnosed Date",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            Icon(
+              Icons.date_range,
+              color: Colors.green,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container addType(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white60,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+            ),
+            BoxShadow(
+              color: Colors.black12,
+            )
+          ]),
+      height: 100,
+      width: MediaQuery.of(context).size.width / 2.2,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Type",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
+            Icon(Icons.merge_type)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container addStage(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white60,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+            ),
+            BoxShadow(
+              color: Colors.black12,
+            )
+          ]),
+      height: 100,
+      width: MediaQuery.of(context).size.width / 2.2,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Stage",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold),
+            ),
+            Icon(Icons.military_tech)
+          ],
+        ),
+      ),
+    );
+  }
+
+  Container addAge(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white60,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+            ),
+            BoxShadow(
+              color: Colors.black12,
+            )
+          ]),
+      height: 100,
+      width: MediaQuery.of(context).size.width / 2.2,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Age",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Icon(Icons.agriculture)
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      "24",
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      " years old",
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
