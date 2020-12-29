@@ -28,14 +28,15 @@ class Hospitals extends StatelessWidget {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          offset: Offset(0.0, 0.3), //(x,y)
-                          blurRadius: 6.0,
-                        )
-                      ]),
+                    borderRadius: BorderRadius.circular(20),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: Colors.black12,
+                    //     offset: Offset(0.0, 0.3), //(x,y)
+                    //     blurRadius: 6.0,
+                    //   )
+                    // ]
+                  ),
                   height: MediaQuery.of(context).size.height / 3,
                   width: MediaQuery.of(context).size.width,
                   child: Stack(
