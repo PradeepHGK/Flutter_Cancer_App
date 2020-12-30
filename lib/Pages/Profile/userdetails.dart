@@ -1,4 +1,6 @@
+import 'dart:io';
 import 'package:demoapp/Pages/homePage.dart';
+//import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
@@ -86,6 +88,70 @@ class _UserDetailsState extends State<UserDetails> {
                         ),
                         height: 100,
                         width: MediaQuery.of(context).size.width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Upload Your Report",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  GestureDetector(
+                                      onTap: () {
+                                        print("onTap Document info");
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline_rounded,
+                                        color: Colors.black,
+                                      ))
+                                ],
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: [
+                                  FlatButton(
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(5)),
+                                      color: Colors.blue,
+                                      minWidth: 30,
+                                      onPressed: () {
+                                        //await filepicker();
+                                      },
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Icon(
+                                            Icons.upload_file,
+                                            color: Colors.white,
+                                          ),
+                                          Text(
+                                            "Upload",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      )),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
                       ),
                     )
                   ],
@@ -96,6 +162,18 @@ class _UserDetailsState extends State<UserDetails> {
         ),
       ),
     );
+  }
+
+  Future filepicker() async {
+    // FilePickerResult result = await FilePicker.platform.pickFiles();
+
+    // if (result != null) {
+    //   File file = File(result.files.single.path);
+    //   var name = file.path.split("/").last;
+    //   print("FileName: $name");
+    // } else {
+    //   // User canceled the picker
+    // }
   }
 
   Padding buildBasicDetails(BuildContext context) {
