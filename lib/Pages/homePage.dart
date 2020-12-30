@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
               )
             ],
-            backgroundColor: Colors.tealAccent[600],
+          backgroundColor: Colors.tealAccent[600],
             elevation: 0,
           ),
           body: TabBarView(
