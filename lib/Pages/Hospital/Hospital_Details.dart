@@ -101,7 +101,8 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                               "Contact Details: 99073 - 87267",
                               style: TextStyle(
                                   color: Colors.red,
-                                  fontWeight: FontWeight.bold, fontSize: 15),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15),
                             ),
                           ],
                         ),

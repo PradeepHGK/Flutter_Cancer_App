@@ -76,7 +76,18 @@ class _UserDetailsState extends State<UserDetails> {
                     SizedBox(
                       height: 20,
                     ),
-                    buildBasicDetails(context)
+                    buildBasicDetails(context),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.orange[200],
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 100,
+                        width: MediaQuery.of(context).size.width,
+                      ),
+                    )
                   ],
                 )
               ])
