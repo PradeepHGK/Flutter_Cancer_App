@@ -24,6 +24,10 @@ class _HomeScreenState extends State<HomeScreen>
   void initState() {
     // TODO: implement initState
     super.initState();
+    tabIntialization();
+  }
+
+  void tabIntialization() {
     currentTabIndex = 0;
     _tarbarController =
         TabController(length: listTabs.length, vsync: this, initialIndex: 0);
@@ -107,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen>
                 ),
               )
             ],
-            backgroundColor: Colors.deepOrange,
+            backgroundColor: Colors.tealAccent[600],
             elevation: 0,
           ),
           body: TabBarView(
