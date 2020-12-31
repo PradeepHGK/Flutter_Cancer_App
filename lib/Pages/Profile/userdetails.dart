@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:demoapp/Pages/homePage.dart';
+import 'package:file_picker/file_picker.dart';
 //import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
@@ -67,10 +68,16 @@ class _UserDetailsState extends State<UserDetails> {
                               )
                             ],
                           ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundImage:
-                                AssetImage("images/icons/doctor.png"),
+                          GestureDetector(
+                            onTap: () {
+                              print("UserIcon");
+                              ShowModelBottomSheet(context);
+                            },
+                            child: CircleAvatar(
+                              radius: 30,
+                              backgroundImage:
+                                  AssetImage("images/icons/doctor.png"),
+                            ),
                           )
                         ],
                       ),
@@ -79,81 +86,7 @@ class _UserDetailsState extends State<UserDetails> {
                       height: 20,
                     ),
                     buildBasicDetails(context),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.orange[200],
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: 100,
-                        width: MediaQuery.of(context).size.width,
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "Upload Your Report",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  GestureDetector(
-                                      onTap: () {
-                                        print("onTap Document info");
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline_rounded,
-                                        color: Colors.black,
-                                      ))
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  FlatButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(5)),
-                                      color: Colors.blue,
-                                      minWidth: 30,
-                                      onPressed: () {
-                                        //await filepicker();
-                                      },
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Icon(
-                                            Icons.upload_file,
-                                            color: Colors.white,
-                                          ),
-                                          Text(
-                                            "Upload",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      )),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
+                    buildUploadDocument(context)
                   ],
                 )
               ])
@@ -161,19 +94,78 @@ class _UserDetailsState extends State<UserDetails> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          print("FloatingActionButton");
+        },
+      ),
+    );
+  }
+
+  void ShowModelBottomSheet(BuildContext context) {
+    showBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 900,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.green,
+          );
+        });
+  }
+
+  Padding buildUploadDocument(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      child: GestureDetector(
+        onTap: () {
+          print("fp: ");
+          var fp = filepicker();
+        },
+        child: Container(
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.upload_file,
+                  color: Colors.green[400],
+                  size: 50,
+                ),
+                Text(
+                  "Upload diagnosed\nmedical file",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green),
+                )
+              ],
+            ),
+          ),
+          height: MediaQuery.of(context).size.height / 6,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [BoxShadow(color: Colors.black26, spreadRadius: 1.1)],
+              color: Colors.white,
+              shape: BoxShape.rectangle),
+        ),
+      ),
     );
   }
 
   Future filepicker() async {
-    // FilePickerResult result = await FilePicker.platform.pickFiles();
+    FilePickerResult result = await FilePicker.platform.pickFiles();
 
-    // if (result != null) {
-    //   File file = File(result.files.single.path);
-    //   var name = file.path.split("/").last;
-    //   print("FileName: $name");
-    // } else {
-    //   // User canceled the picker
-    // }
+    if (result != null) {
+      File file = File(result.files.single.path);
+      var name = file.path.split("/").last;
+      print("FileName: $name");
+    } else {
+      // User canceled the picker
+      print("UserCanceled");
+    }
   }
 
   Padding buildBasicDetails(BuildContext context) {

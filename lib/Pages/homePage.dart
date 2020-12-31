@@ -5,7 +5,6 @@ import 'package:demoapp/Pages/Models/TabList.dart';
 import 'package:demoapp/Pages/NaturalTreatment/NaturalTreatment.dart';
 import 'package:demoapp/Pages/Patients/Patients.dart';
 import 'package:demoapp/Pages/Profile/userdetails.dart';
-import 'package:demoapp/Pages/myaccount.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

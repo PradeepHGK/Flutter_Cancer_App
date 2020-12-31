@@ -20,7 +20,6 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     isSwipeEnded = false;
     _currentPage = 0;
     super.initState();

@@ -1,6 +1,4 @@
 import 'package:demoapp/Pages/GetStartedPage.dart';
-import 'package:demoapp/Pages/Models/TabList.dart';
-import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
