@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:demoapp/Pages/homePage.dart';
-import 'package:file_picker/file_picker.dart';
 //import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
@@ -156,16 +155,16 @@ class _UserDetailsState extends State<UserDetails> {
   }
 
   Future filepicker() async {
-    FilePickerResult result = await FilePicker.platform.pickFiles();
+    // FilePickerResult result = await FilePicker.platform.pickFiles();
 
-    if (result != null) {
-      File file = File(result.files.single.path);
-      var name = file.path.split("/").last;
-      print("FileName: $name");
-    } else {
-      // User canceled the picker
-      print("UserCanceled");
-    }
+    // if (result != null) {
+    //   File file = File(result.files.single.path);
+    //   var name = file.path.split("/").last;
+    //   print("FileName: $name");
+    // } else {
+    //   // User canceled the picker
+    //   print("UserCanceled");
+    // }
   }
 
   Padding buildBasicDetails(BuildContext context) {

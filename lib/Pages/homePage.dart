@@ -51,11 +51,12 @@ class _HomeScreenState extends State<HomeScreen>
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
+              
                 onTap: (value) {
                   print("TabValue: $value");
                 },
                 controller: _tarbarController,
-                indicatorColor: Colors.black,
+                indicatorColor: Colors.white,
                 physics: BouncingScrollPhysics(),
                 isScrollable: true,
                 tabs: listTabs.toList(growable: true)),
@@ -119,7 +120,8 @@ class _HomeScreenState extends State<HomeScreen>
               Patients(),
               NaturalTreatment(),
               Hospitals(),
-              FAQScreen()
+              FAQScreen(),
+              UserDetails()
             ],
           ),
           // bottomNavigationBar: BottomNavigationBar(
