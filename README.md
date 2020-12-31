@@ -32,3 +32,6 @@
 * flutter run --releases
 * flutter build appbundle --target-platform android-arm,android-arm64,android-x64
 * flutter build apk --target-platform android-arm,android-arm64,android-x64 --split-per-abi
+  * Analyze App Size 
+    * flutter build apk --analyze-size --target-platform=android-arm64 (Android) [Check App Total Size](https://flutter.dev/docs/perf/app-size#checking-the-total-size)
+  
