@@ -108,12 +108,6 @@ class _UserDetailsState extends State<UserDetails> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          print("FloatingActionButton");
-        },
-      ),
     );
   }
 

@@ -121,7 +121,6 @@ class _HomeScreenState extends State<HomeScreen>
               NaturalTreatment(),
               Hospitals(),
               FAQScreen(),
-              UserDetails()
             ],
           ),
           // bottomNavigationBar: BottomNavigationBar(

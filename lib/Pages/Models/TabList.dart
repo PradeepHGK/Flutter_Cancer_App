@@ -19,8 +19,5 @@ List<Widget> listTabs = [
   Tab(
     // icon: ImageIcon(AssetImage("images/icons/faq.png")),
     text: "FAQ",
-  ),
-  Tab(
-    text: "Support",
   )
 ];
