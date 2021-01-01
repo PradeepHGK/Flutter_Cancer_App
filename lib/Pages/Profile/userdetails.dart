@@ -85,7 +85,22 @@ class _UserDetailsState extends State<UserDetails> {
                       height: 20,
                     ),
                     buildBasicDetails(context),
-                    buildUploadDocument(context)
+                    buildUploadDocument(context),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 4,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.yellow,
+                          child: Center(
+                            child: FloatingActionButton(
+                              onPressed: null,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 )
               ])
