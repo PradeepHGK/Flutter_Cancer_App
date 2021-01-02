@@ -90,14 +90,20 @@ class _UserDetailsState extends State<UserDetails> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          height: MediaQuery.of(context).size.height / 4,
+                          height: MediaQuery.of(context).size.height / 5,
                           width: MediaQuery.of(context).size.width,
                           color: Colors.yellow,
                           child: Center(
-                            child: FloatingActionButton(
-                              onPressed: null,
+                              child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(10)),
+                              height: MediaQuery.of(context).size.height / 5,
+                              width: MediaQuery.of(context).size.width,
                             ),
-                          ),
+                          )),
                         ),
                       ),
                     )

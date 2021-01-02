@@ -22,16 +22,7 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
                     fit: BoxFit.fill,
                     image: AssetImage("images/homepage.jpeg"),
                   )),
-              IconButton(
-                  icon: Icon(
-                    Icons.arrow_back,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
-                  }),
+              pageBackButton(context),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Stack(
@@ -125,6 +116,31 @@ class _Hospital_DetailsState extends State<Hospital_Details> {
               )
             ]),
           ]),
+        ),
+      ),
+    );
+  }
+
+  Padding pageBackButton(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+              color: Colors.white54, borderRadius: BorderRadius.circular(50)),
+          child: IconButton(
+              icon: Icon(
+                Icons.arrow_back,
+                size: 30,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+              }),
         ),
       ),
     );
