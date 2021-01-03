@@ -51,18 +51,23 @@ class _HomeScreenState extends State<HomeScreen>
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
-              
+              labelStyle: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold
+              ),
                 onTap: (value) {
                   print("TabValue: $value");
                 },
+                labelColor: Colors.blue,
                 controller: _tarbarController,
-                indicatorColor: Colors.white,
+                indicatorColor: Colors.yellow,
                 physics: BouncingScrollPhysics(),
                 isScrollable: true,
                 tabs: listTabs.toList(growable: true)),
             title: Text(
               "Support Cancer",
               style: TextStyle(
+                color: Colors.orange,
                   letterSpacing: 3,
                   fontFamily: "WinterYesterday",
                   fontWeight: FontWeight.bold,
@@ -89,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen>
                   child: Image(
                     image: AssetImage("images/icons/SupportIcon.png"),
                     isAntiAlias: true,
-                    color: Colors.white,
+                    color: Colors.deepOrange,
                     alignment: Alignment.topLeft,
                   ),
                 ),
@@ -105,13 +110,13 @@ class _HomeScreenState extends State<HomeScreen>
                   padding: const EdgeInsets.all(8.0),
                   child: CircleAvatar(
                     radius: 18,
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.orangeAccent,
                     backgroundImage: AssetImage("images/icons/doctor.png"),
                   ),
                 ),
               )
             ],
-            backgroundColor: Colors.tealAccent[600],
+            backgroundColor: Colors.white,
             elevation: 0,
           ),
           body: TabBarView(

@@ -26,7 +26,7 @@ class Hospitals extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => Hospital_Details()));
                 },
-                child:  hospitalButtonTile(context, index),
+                child: hospitalButtonTile(context, index),
               )
             ],
           );

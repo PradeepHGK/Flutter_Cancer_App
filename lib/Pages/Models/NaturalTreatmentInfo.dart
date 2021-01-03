@@ -10,7 +10,7 @@ class NaturalTreatmentInfo {
   NaturalTreatmentInfo(this.hospitalName, this.age, this.informationText,
       this.comments, this.imageURL);
 
-  List<Testimony> testimonial = new List<Testimony>();
+  List<Testimony> testimonial = <Testimony>[];
 }
 
 class Testimony {
