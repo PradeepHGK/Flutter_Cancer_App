@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:demoapp/Pages/Models/NaturalTreatmentInfo.dart';
+import 'package:demoapp/Pages/NaturalTreatment/NatTreatHostpital.dart';
 import 'package:demoapp/Pages/Patients/PatientInfoPage.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class NaturalTreatment extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PatientInfoPage(index)));
+                          builder: (context) => NatTreatHostpital()));
                 },
                 child: Card(
                   shadowColor: Colors.black,

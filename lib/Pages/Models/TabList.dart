@@ -6,11 +6,39 @@ List<Widget> listTabs = [
     //   AssetImage("images/icons/patient.png"),
     //   color: Colors.white,
     // ),
-    text: "Patients",
+    //text: "Patients",
+    icon: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Icon(
+          Icons.sick,
+          size: 20,
+          color: Colors.blue,
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Text("Patients")
+      ],
+    ),
   ),
   Tab(
     // icon: ImageIcon(AssetImage("images/icons/naturalmedicine.png")),
-    text: "Natural Treatment",
+    //text: "Natural Treatment",
+    icon: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(
+          Icons.nature,
+          size: 20,
+          color: Colors.blue,
+        ),
+         SizedBox(
+          width: 5,
+        ),
+        Text("Natural Treatment")
+      ],
+    ),
   ),
   Tab(
     // icon: ImageIcon(AssetImage("images/icons/doctor.png")),
@@ -22,6 +50,9 @@ List<Widget> listTabs = [
           Icons.local_hospital,
           size: 20,
           color: Colors.blue,
+        ),
+         SizedBox(
+          width: 5,
         ),
         Text("Hospitals")
       ],
@@ -37,6 +68,9 @@ List<Widget> listTabs = [
           Icons.question_answer,
           size: 20,
           color: Colors.blue,
+        ),
+         SizedBox(
+          width: 5,
         ),
         Text("FAQ")
       ],
