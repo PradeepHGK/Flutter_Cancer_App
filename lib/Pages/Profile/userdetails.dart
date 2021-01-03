@@ -10,6 +10,9 @@ class UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<UserDetails> {
+
+  var fontFamily = "Dinoko";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

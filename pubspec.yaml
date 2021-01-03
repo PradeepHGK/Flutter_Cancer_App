@@ -57,7 +57,7 @@ flutter:
         - asset: fonts/winter-yesterday/WinterYesterday.ttf
     - family: Dinoko
       fonts:
-        - asset: fonts/dinoko/Dinoko-Regular.ttf
+        - asset: fonts/dinoko/Dinoko-Regular.otf
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/

@@ -14,10 +14,32 @@ List<Widget> listTabs = [
   ),
   Tab(
     // icon: ImageIcon(AssetImage("images/icons/doctor.png")),
-    text: "Hospitals",
+    //text: "Hospitals",
+    icon: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(
+          Icons.local_hospital,
+          size: 20,
+          color: Colors.blue,
+        ),
+        Text("Hospitals")
+      ],
+    ),
   ),
   Tab(
     // icon: ImageIcon(AssetImage("images/icons/faq.png")),
-    text: "FAQ",
+    //text: "FAQ",
+    icon: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(
+          Icons.question_answer,
+          size: 20,
+          color: Colors.blue,
+        ),
+        Text("FAQ")
+      ],
+    ),
   )
 ];
