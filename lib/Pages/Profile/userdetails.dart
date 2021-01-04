@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:demoapp/Pages/homePage.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
@@ -24,14 +25,7 @@ class _UserDetailsState extends State<UserDetails> {
           child: Column(
             children: [
               Stack(children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.blue[800],
-                      borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(20),
-                          bottomLeft: Radius.circular(20))),
-                  height: MediaQuery.of(context).size.height / 4 - 50,
-                ),
+                topContainer(context),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,7 +43,7 @@ class _UserDetailsState extends State<UserDetails> {
                         }),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 15),
+                          horizontal: 10, vertical: 5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -85,40 +79,33 @@ class _UserDetailsState extends State<UserDetails> {
                           )
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    buildBasicDetails(context),
-                    buildUploadDocument(context),
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height / 5,
-                          width: MediaQuery.of(context).size.width,
-                          color: Colors.yellow,
-                          child: Center(
-                              child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(10)),
-                              height: MediaQuery.of(context).size.height / 5,
-                              width: MediaQuery.of(context).size.width,
-                            ),
-                          )),
-                        ),
-                      ),
                     )
                   ],
                 )
-              ])
+              ]),
+              buildBasicDetails(context),
+              buildUploadDocument(context)
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Container topContainer(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+          color: Colors.blue[800],
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(20))),
+      height: MediaQuery.of(context).size.height / 5 - 30,
+      // child: ,
+      //     SizedBox(
+      //       height: 20,
+      //     ),
+      //     buildBasicDetails(context),
+      //     buildUploadDocument(context)
     );
   }
 
