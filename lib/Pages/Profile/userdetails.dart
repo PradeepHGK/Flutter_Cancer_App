@@ -1,7 +1,8 @@
 import 'dart:io';
+
 import 'package:demoapp/Pages/homePage.dart';
-//import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
 class UserDetails extends StatefulWidget {
@@ -10,8 +11,9 @@ class UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<UserDetails> {
-
   var fontFamily = "Dinoko";
+  PickedFile _pickedFile;
+  ImagePicker _imagePicker = new ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -137,8 +139,9 @@ class _UserDetailsState extends State<UserDetails> {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: GestureDetector(
         onTap: () {
-          print("fp: ");
-          var fp = filepicker();
+          setState(() {
+            getImage(ImageSource.gallery);
+          });
         },
         child: Container(
           child: Center(
@@ -156,13 +159,21 @@ class _UserDetailsState extends State<UserDetails> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.green),
-                )
+                ),
+                // Image.asset(_imagePicker == null
+                //     ? "images/homepage.jpeg"
+                //     : _pickedFile.path)
               ],
             ),
           ),
           height: MediaQuery.of(context).size.height / 6,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
+              image: DecorationImage(
+                image: _pickedFile == null
+                    ? AssetImage("images/homepage.jpeg")
+                    : FileImage(File(_pickedFile.path)),
+              ),
               borderRadius: BorderRadius.circular(10),
               boxShadow: [BoxShadow(color: Colors.black26, spreadRadius: 1.1)],
               color: Colors.white,
@@ -172,17 +183,27 @@ class _UserDetailsState extends State<UserDetails> {
     );
   }
 
-  Future filepicker() async {
-    // FilePickerResult result = await FilePicker.platform.pickFiles();
+  // Future filepicker() async {
+  //   FilePickerResult result = await FilePicker.platform.pickFiles();
 
-    // if (result != null) {
-    //   File file = File(result.files.single.path);
-    //   var name = file.path.split("/").last;
-    //   print("FileName: $name");
-    // } else {
-    //   // User canceled the picker
-    //   print("UserCanceled");
-    // }
+  //   if (result != null) {
+  //     File file = File(result.files.single.path);
+  //     var name = file.path.split("/").last;
+  //     print("FileName: $name");
+  //   } else {
+  //     // User canceled the picker
+  //     print("UserCanceled");
+  //   }
+  // }
+
+  void getImage(ImageSource source) async {
+    final _picker = await _imagePicker.getImage(
+      source: source,
+    );
+
+    setState(() {
+      _pickedFile = _picker;
+    });
   }
 
   Padding buildBasicDetails(BuildContext context) {
