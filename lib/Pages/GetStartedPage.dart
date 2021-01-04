@@ -108,10 +108,10 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          // TextButton(
-          //   onPressed: onPressSkipBtn,
-          //   child: Text("Skip"),
-          // ),
+          TextButton(
+            onPressed: onPressSkipBtn,
+            child: Text("Skip"),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -138,7 +138,7 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
 
   void onPressSkipBtn() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Myaccount()));
+        context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 
   Row pageIndicator(bool iscurrentPage) {
