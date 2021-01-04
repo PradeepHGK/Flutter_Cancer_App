@@ -100,12 +100,6 @@ class _UserDetailsState extends State<UserDetails> {
               bottomRight: Radius.circular(20),
               bottomLeft: Radius.circular(20))),
       height: MediaQuery.of(context).size.height / 5 - 30,
-      // child: ,
-      //     SizedBox(
-      //       height: 20,
-      //     ),
-      //     buildBasicDetails(context),
-      //     buildUploadDocument(context)
     );
   }
 
@@ -127,10 +121,10 @@ class _UserDetailsState extends State<UserDetails> {
       child: GestureDetector(
         onTap: () {
           setState(() {
-            //getImage(ImageSource.camera);
-            showBottomSheet(
-                context: context,
-                builder: ((builder) => bottomSheetContainer(context)));
+            getImage(ImageSource.gallery);
+            // showBottomSheet(
+            //     context: context,
+            //     builder: ((builder) => bottomSheetContainer(context)));
           });
         },
         child: Container(

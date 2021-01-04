@@ -10,7 +10,7 @@ class FAQScreen extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: buildExpansionTile(index),
             );
           }),
@@ -20,13 +20,13 @@ class FAQScreen extends StatelessWidget {
   Card buildExpansionTile(int index) {
     return Card(
       borderOnForeground: true,
-      color: Colors.white38,
+      color: Colors.orange[50],
       child: ExpansionTile(
         leading: Icon(Icons.question_answer),
         maintainState: true,
         initiallyExpanded: false,
         title: ListTile(
-          selectedTileColor: Colors.white12,
+          selectedTileColor: Colors.orangeAccent,
           title: Text(
             "How to upload relavant document in profile page $index",
             overflow: TextOverflow.visible,
@@ -34,7 +34,7 @@ class FAQScreen extends StatelessWidget {
         ),
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(loremIpsum(paragraphs: 2)),
           )
         ],
