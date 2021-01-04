@@ -150,7 +150,7 @@ class _UserDetailsState extends State<UserDetails> {
               children: [
                 Icon(
                   Icons.upload_file,
-                  color: Colors.green[400],
+                  color: Colors.white,
                   size: 50,
                 ),
                 Text(
@@ -158,11 +158,8 @@ class _UserDetailsState extends State<UserDetails> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.green),
+                      color: Colors.white),
                 ),
-                // Image.asset(_imagePicker == null
-                //     ? "images/homepage.jpeg"
-                //     : _pickedFile.path)
               ],
             ),
           ),
@@ -170,6 +167,7 @@ class _UserDetailsState extends State<UserDetails> {
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
+                fit: BoxFit.cover,
                 image: _pickedFile == null
                     ? AssetImage("images/homepage.jpeg")
                     : FileImage(File(_pickedFile.path)),
