@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 List<Widget> listTabs = [
   Tab(
@@ -18,7 +19,12 @@ List<Widget> listTabs = [
         SizedBox(
           width: 5,
         ),
-        Text("Patients")
+        Text("Patients",
+            style: GoogleFonts.abel(
+                textStyle: TextStyle(
+                    fontSize: 15,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold)))
       ],
     ),
   ),
@@ -33,7 +39,7 @@ List<Widget> listTabs = [
           size: 20,
           color: Colors.blue,
         ),
-         SizedBox(
+        SizedBox(
           width: 5,
         ),
         Text("Natural Treatment")
@@ -51,7 +57,7 @@ List<Widget> listTabs = [
           size: 20,
           color: Colors.blue,
         ),
-         SizedBox(
+        SizedBox(
           width: 5,
         ),
         Text("Hospitals")
@@ -69,7 +75,7 @@ List<Widget> listTabs = [
           size: 20,
           color: Colors.blue,
         ),
-         SizedBox(
+        SizedBox(
           width: 5,
         ),
         Text("FAQ")
