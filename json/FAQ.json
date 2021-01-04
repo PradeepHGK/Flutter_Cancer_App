@@ -1,0 +1,54 @@
+{
+  "App Related Queries": {
+    "GeneralQuestions": [
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      },
+      {
+        "question": "How to use this app?",
+        "answer": "Answer through youtube/blog or expanded text"
+      }
+    ],
+    "App Contribution & Support": {
+      "email": "",
+      "FB": "",
+      "Twitter": "",
+      "Instagram": ""
+    }
+  },
+  "DonationRelatedQueries": {
+    "ReceivingDonations": [],
+    "Contributors": []
+  },
+  "DiseaseRelatedQueries": {
+    "HelpLine": {
+      "ContactNo": "83493 80098",
+      "email": ""
+    }
+  }
+}

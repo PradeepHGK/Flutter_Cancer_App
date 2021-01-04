@@ -72,7 +72,7 @@ class _UserDetailsState extends State<UserDetails> {
                               )
                             ],
                           ),
-                          GestureDetector(
+                          InkWell(
                             onTap: () {
                               print("UserIcon");
                               ShowModelBottomSheet(context);
@@ -140,7 +140,10 @@ class _UserDetailsState extends State<UserDetails> {
       child: GestureDetector(
         onTap: () {
           setState(() {
-            getImage(ImageSource.gallery);
+            //getImage(ImageSource.camera);
+            showBottomSheet(
+                context: context,
+                builder: ((builder) => bottomSheetContainer(context)));
           });
         },
         child: Container(
@@ -202,6 +205,24 @@ class _UserDetailsState extends State<UserDetails> {
     setState(() {
       _pickedFile = _picker;
     });
+  }
+
+  Widget bottomSheetContainer(BuildContext context) {
+    return Container(
+      alignment: Alignment.bottomCenter,
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      color: Colors.green,
+      child: Row(
+        children: [
+          IconButton(
+            color: Colors.white,
+            icon: Icon(Icons.camera),
+            onPressed: () {},
+          )
+        ],
+      ),
+    );
   }
 
   Padding buildBasicDetails(BuildContext context) {

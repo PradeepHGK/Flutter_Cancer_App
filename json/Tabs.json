@@ -1,0 +1,12 @@
+{
+  "TopicsOnTabs": [
+    {
+      "name" : "Patients",
+      "iconURL": ""
+    },
+    {
+      "name":"NaturalTreatment",
+        "iconURL": ""
+    }
+  ]
+}
