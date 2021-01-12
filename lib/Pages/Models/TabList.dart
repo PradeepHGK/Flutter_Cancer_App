@@ -14,14 +14,15 @@ List<Widget> listTabs = [
         Icon(
           Icons.sick,
           size: 20,
-          color: Colors.blue,
+          color: Colors.lightBlue,
         ),
         SizedBox(
           width: 5,
         ),
         Text("Patients",
-            style: GoogleFonts.abel(
+            style: GoogleFonts.roboto(
                 textStyle: TextStyle(
+                    letterSpacing: .5,
                     fontSize: 15,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold)))
@@ -37,7 +38,7 @@ List<Widget> listTabs = [
         Icon(
           Icons.nature,
           size: 20,
-          color: Colors.blue,
+          color: Colors.lightBlue,
         ),
         SizedBox(
           width: 5,
@@ -55,7 +56,7 @@ List<Widget> listTabs = [
         Icon(
           Icons.local_hospital,
           size: 20,
-          color: Colors.blue,
+          color: Colors.lightBlue,
         ),
         SizedBox(
           width: 5,
@@ -73,7 +74,7 @@ List<Widget> listTabs = [
         Icon(
           Icons.question_answer,
           size: 20,
-          color: Colors.blue,
+          color: Colors.lightBlue,
         ),
         SizedBox(
           width: 5,
