@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  hexcolor: ^1.0.6
   google_fonts: ^1.1.1
   #file_picker: ^2.1.4
   image_picker: ^0.6.7+17
@@ -37,6 +38,7 @@ dependencies:
   cached_network_image: ^2.5.0
     
 dev_dependencies:
+  flutter_icons: ^1.0.0
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.8.1
