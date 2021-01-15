@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class NatTreatHostpital extends StatefulWidget {
   @override
@@ -53,7 +55,9 @@ class _NatTreatHostpitalState extends State<NatTreatHostpital> {
                       }),
                   IconButton(
                       icon: Icon(
-                        Icons.lightbulb_outline_rounded,
+                        isDarkModeEnabled
+                            ? FontAwesomeIcons.solidMoon
+                            : FontAwesomeIcons.moon,
                         color: isDarkModeEnabled ? Colors.white : Colors.black,
                       ),
                       onPressed: () {
@@ -90,7 +94,7 @@ class _NatTreatHostpitalState extends State<NatTreatHostpital> {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(loremIpsum(paragraphs: 2),
+                        child: Text(loremIpsum(paragraphs: 1, words: 20),
                             style: GoogleFonts.actor(
                               fontSize: 15,
                               color: isDarkModeEnabled
@@ -106,7 +110,9 @@ class _NatTreatHostpitalState extends State<NatTreatHostpital> {
                         child: Container(
                           decoration: BoxDecoration(
                               color: HexColor("374045"),
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10))),
                           child: Padding(
                             padding: const EdgeInsets.only(top: 30),
                             child: ListView.builder(

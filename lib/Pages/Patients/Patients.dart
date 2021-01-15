@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
 
 class Patients extends StatelessWidget {
@@ -49,9 +50,9 @@ class Patients extends StatelessWidget {
   }
 
   Card buildCard(int index) {
-    return Card(
-      color: Colors.white60,
-      elevation: 20,
+    return Card(  
+      color: HexColor("#f5a25d"),
+      elevation: 5,
       child: ExpansionTile(
         subtitle: Text("Type",
             style: TextStyle(
